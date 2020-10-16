@@ -1,0 +1,32 @@
+<ng-container *ngIf="suite == 'html'">
+  <div #divUnderlyingComponent abs-html-button>
+    <slot></slot>
+  </div>
+</ng-container>
+<ng-container *ngIf="suite == 'ionic'">
+  <div #divUnderlyingComponent abs-ionic-button>
+    <slot></slot>
+  </div>
+</ng-container>
+<ng-container *ngIf="suite == 'primeng'">
+  <div #divUnderlyingComponent abs-primeng-button>
+    <slot></slot>
+  </div>
+</ng-container>
+<ng-container *ngIf="suite == 'material'">
+  <div #divUnderlyingComponent abs-material-button>
+    <slot></slot>
+  </div>
+</ng-container>
+<ng-container *ngIf="suite == 'bootstrap'">
+  <div #divUnderlyingComponent abs-bootstrap-button>
+    <slot></slot>
+  </div>
+</ng-container>
+<ng-container *ngIf="suite == 'kendoui'">
+  <div #divUnderlyingComponent abs-kendoui-button>
+    <slot></slot>
+  </div>
+</ng-container>
+
+abs-button

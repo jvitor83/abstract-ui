@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+    {
+      "type": "npm",
+      "script": "build",
+      "problemMatcher": [
+        "$tsc-watch"
+      ],
+      "group": "build",
+      "label": "npm: build",
+      "detail": "ng build --watch",
+      "isBackground": true
+    },
+    {
+      "label": "Terminate All Tasks",
+      "command": "echo ${input:terminate}",
+      "type": "shell",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "terminate",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "terminateAll"
+    }
+  ]
+}
