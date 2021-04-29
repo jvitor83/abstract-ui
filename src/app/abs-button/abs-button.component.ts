@@ -22,7 +22,6 @@ export class AbsButtonComponent extends AbsButton implements AfterViewInit {
 
 
   ngAfterViewInit(): void {
-    // TODO: Test dynamic change suite to see if it change the click subscription
     this.setDivUnderlyingComponent(this.divUnderlyingComponentQueryList);
     this.divUnderlyingComponentQueryList.changes.subscribe((divUnderlyingComponentQueryList: QueryList<BaseButtonSuiteComponentWrapper<any>>) => {
       this.setDivUnderlyingComponent(divUnderlyingComponentQueryList);

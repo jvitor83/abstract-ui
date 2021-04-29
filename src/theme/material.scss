@@ -12,23 +12,23 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$ui-jus-ng-primary: mat-palette($mat-indigo);
-$ui-jus-ng-accent: mat-palette($mat-pink, A200, A100, A400);
+$abs-ng-primary: mat-palette($mat-indigo);
+$abs-ng-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$ui-jus-ng-warn: mat-palette($mat-red);
+$abs-ng-warn: mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$ui-jus-ng-theme: mat-light-theme((
+$abs-ng-theme: mat-light-theme((
   color: (
-    primary: $ui-jus-ng-primary,
-    accent: $ui-jus-ng-accent,
-    warn: $ui-jus-ng-warn,
+    primary: $abs-ng-primary,
+    accent: $abs-ng-accent,
+    warn: $abs-ng-warn,
   )
 ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($ui-jus-ng-theme);
+@include angular-material-theme($abs-ng-theme);
