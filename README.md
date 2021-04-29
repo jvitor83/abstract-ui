@@ -8,17 +8,20 @@ Project to achieve 2 goals:
 
 This is a experiment!
 
+## Getting started
+`npm install`
+
 ## Develop
 ```
-npm install
 npm start
 ```
 
 ## Production
-```
-npm run build.prod
-```
-Then create a html and import the js and css files from the dist like:
+1) Comment the bootstrap line of app.module.ts (not found a solution to switch that yet)
+
+2) `npm run build.prod`
+
+3) Create a html and import the js and css files from the dist like:
 ```html
 <!DOCTYPE html>
 <html lang="en">
