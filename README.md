@@ -3,7 +3,7 @@
 Project to achieve 2 goals:
 
   - Create a component layer to abstract a ui library suite (bootstrap/material/ionic/kendo/primeng/etc)
-  - Create web components from those (using angular elements)
+  - Create web components from those (using angular elements) with `abs-` prefix. (like `abs-button`)
 
 
 This is a experiment!
@@ -17,11 +17,9 @@ npm start
 ```
 
 ## Production
-1) Comment the bootstrap line of app.module.ts (not found a solution to switch that yet)
+1) `npm run build.prod`
 
-2) `npm run build.prod`
-
-3) Create a html and import the js and css files from the dist like:
+2) Create a html and import the js and css files from the dist like:
 ```html
 <!DOCTYPE html>
 <html lang="en">

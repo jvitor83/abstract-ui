@@ -1,5 +1,5 @@
 import { ClickEvent } from './abs-button/interface';
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Suite } from './definitions';
 
 @Component({

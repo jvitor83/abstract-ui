@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --watch --vendorChunk=false --commonChunk=false --namedChunks=false",
-    "build.prod": "ng build --prod --output-hashing=none --vendorChunk=false --commonChunk=false --namedChunks=false",
+    "build": "ng build --watch --vendor-chunk=false --common-chunk=false --named-chunks=false",
+    "build.prod": "ng build --prod --output-hashing=none --vendor-chunk=false --common-chunk=false --named-chunks=false",
     "postbuild.prod": "bundle.sh",
     "serve.prod": "live-server dist/ui-jus-ng/",
     "test": "ng test",
@@ -45,6 +45,7 @@
     "@angular-devkit/build-angular": "~0.1001.3",
     "@angular/cli": "~10.1.3",
     "@angular/compiler-cli": "~10.1.3",
+    "@ionic/angular-toolkit": "latest",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
@@ -57,10 +58,10 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "ngx-build-plus": "^16.0.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.2",
-    "@ionic/angular-toolkit": "latest"
+    "typescript": "~4.0.2"
   }
 }

@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Input, Output, ViewEncapsulation, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
-import { AbsComponent } from '../abs.component';
-import { getDefaultSuite, prefix, Suite } from '../definitions';
+import { switchMap } from 'rxjs/operators';
+import { prefix, Suite } from '../definitions';
 import { AbsButton, BaseButtonSuiteComponentWrapper, ButtonSuiteComponentWrapper } from './interface';
 
 @Component({

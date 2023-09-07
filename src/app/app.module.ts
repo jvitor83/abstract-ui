@@ -2,9 +2,10 @@ import { environment } from './../environments/environment';
 import { AbsKendoUIButtonComponent } from './abs-button/abs-kendoui-button/abs-kendoui-button.component';
 import { AbsBootstrapButtonComponent } from './abs-button/abs-bootstrap-button/abs-bootstrap-button.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { CUSTOM_ELEMENTS_SCHEMA, DoBootstrap, Injector, NgModule, Optional } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, DoBootstrap, Injector, NgModule, Optional, Type, isDevMode } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+//const { AppComponent } = await import('./app.component');
 import { AppComponent } from './app.component';
 import { AbsButtonComponent } from './abs-button/abs-button.component';
 import { createCustomElement } from '@angular/elements';
@@ -20,59 +21,60 @@ import { AbsPrimeNGButtonComponent } from './abs-button/abs-primeng-button/abs-p
 import { AbsMaterialButtonComponent } from './abs-button/abs-material-button/abs-material-button.component';
 import { MatButtonModule } from '@angular/material/button';
 import { prefix } from './definitions';
+import { AbsButtonComponentModule } from './abs-button/abs-button.module';
 
 console.log(environment.production);
+console.log(isDevMode());
+
+// if (environment.production) {
+//   var bootstrap: Array<Type<any> | any[]> = [];
+// } else {
+// }
+var bootstrap: Array<Type<any> | any[]> = [AppComponent];
+if (environment.production) {
+  bootstrap = [];
+}
+
+// var componentsDeclarations = [
+//   AbsButtonComponent,
+//   AbsHtmlButtonComponent,
+//   AbsIonicButtonComponent,
+//   AbsPrimeNGButtonComponent,
+//   AbsMaterialButtonComponent,
+//   AbsBootstrapButtonComponent,
+//   AbsKendoUIButtonComponent,
+// ];
+// var appDeclaration = [AppComponent];
+// var declarations: Array<Type<any> | any[]> = [
+//   ...appDeclaration,
+//   ...componentsDeclarations
+// ];
+// if (!isDevMode()) {
+//   declarations = [
+//     ...componentsDeclarations
+//   ];
+// }
 
 
 @NgModule({
   declarations: [
     AppComponent,
 
-    AbsButtonComponent,
-    AbsHtmlButtonComponent,
-    AbsIonicButtonComponent,
-    AbsPrimeNGButtonComponent,
-    AbsMaterialButtonComponent,
-    AbsBootstrapButtonComponent,
-    AbsKendoUIButtonComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
 
-    IonicModule.forRoot(),
-    NgbModule,
-    ButtonModule,
-    ButtonsModule,
-    MatButtonModule,
+    AbsButtonComponentModule,
 
   ],
-  entryComponents: [AbsButtonComponent, AbsHtmlButtonComponent,
-    AbsIonicButtonComponent, AbsPrimeNGButtonComponent, AbsMaterialButtonComponent,
-    AbsBootstrapButtonComponent, AbsKendoUIButtonComponent],
+  entryComponents: [AppComponent],
   providers: [],
-  bootstrap: [AppComponent], //TODO: THIS NEED TO BE REMOVED INTO PRODUCTION BUILD IN ORDER TO USE THE BUNDLE (one-js-only by concat [bundle.js])
+  bootstrap: bootstrap,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule implements DoBootstrap {
-    constructor(@Optional() public injector: Injector) {
-
-  }
-  ngDoBootstrap() {
-
-    if(environment.production) {
-      const injector = this.injector;
-
-      // all components
-      console.log('Registering components...');
-      const el = createCustomElement(AbsButtonComponent, { injector });
-      customElements.define(`${prefix}-button`, el);
-
-      const app = createCustomElement(AppComponent, { injector });
-      customElements.define(`${prefix}-root`, app);
-    } else {
-      console.log('NOT registering custom components...');
-    }
-  }
+  ngDoBootstrap() {}
 }
